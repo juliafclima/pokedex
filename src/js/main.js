@@ -1,7 +1,8 @@
 const pokemonList = document.getElementById("pokemonList");
 const botaoMore = document.getElementById("loadMoreBtn");
 
-const limite = 10;
+const maxRecords = 11; // 151
+const limite = 20;
 let offset = 0;
 
 function exibirMais(offset, limite) {
@@ -26,7 +27,7 @@ function exibirMais(offset, limite) {
           </li>`
       )
       .join("");
-    pokemonList.innerHTML += newList; 
+    pokemonList.innerHTML += newList;
   });
 }
 
@@ -34,5 +35,11 @@ exibirMais(offset, limite);
 
 botaoMore.addEventListener("click", () => {
   offset += limite;
-  exibirMais(offset, limite);
+
+  const qntRecordsProximaPagina = offset + limite;
+
+  if ((qntRecordsProximaPagina) => maxRecords) {
+    const newLimite = qntRecordsProximaPagina - maxRecords;
+    exibirMais(offset, newLimite);
+  }
 });
