@@ -9,9 +9,38 @@ body {
   background-color: #f6f8fc;
 }
 
+header,
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
 .content {
   width: 100vw;
   height: 100vh;
   padding: 1rem;
   background-color: #fff;
+}
+
+.paragrafo__footer {
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.link__linkedin {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.titulo-logo {
+  max-width: 90%;
+  height: auto;
+  display: block; 
+  margin: auto;
 }

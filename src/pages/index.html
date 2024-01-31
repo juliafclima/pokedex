@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pokedex</title>
+    <title>Pokedex - 1ª geração</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/global.css" />
@@ -25,18 +25,43 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap"
       rel="stylesheet"
     />
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="../assets/images/favicon.ico"
+      type="image/x-icon"
+    />
   </head>
   <body>
+    <header>
+      <img
+        class="titulo-logo"
+        src="https://fontmeme.com/permalink/240131/0e00b1cc882d5290d75a175506ee5f25.png"
+        alt="fonte-de-pokemon"
+        border="0"
+      />
+    </header>
     <section class="content">
-      <h1>Pokedex - 1ª geração</h1>
       <ol id="pokemonList" class="pokemons">
         <!-- POKEMON LIST HERE -->
       </ol>
       <div class="pagination">
         <button id="loadMoreBtn" type="button">Carregar mais...</button>
       </div>
-    </section>
 
+      <footer>
+        <p class="paragrafo__footer">
+          © 2024 Pokédex - Desenvolvido por
+          <a
+            class="link__linkedin"
+            href="https://www.linkedin.com/in/juliafclima/"
+            target="_blank"
+            >Júlia Lima</a
+          >
+        </p>
+      </footer>
+    </section>
+    
     <script src="../js/pokemonModel.js"></script>
     <script src="../js/pokeapi.js"></script>
     <script src="../js/main.js"></script>
