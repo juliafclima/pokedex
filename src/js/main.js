@@ -10,7 +10,7 @@ function exibirMais(offset, limite) {
     const newList = pokemons
       .map(
         (pokemon) => `
-          <li class="pokemon ${pokemon.types[0]}">
+        <li class="pokemon ${pokemon.types[0]}" data-id="${pokemon.order}">
             <span class="number">#00${pokemon.order}</span>
             <span class="name">${pokemon.name}</span>
             <div class="detail">
@@ -28,6 +28,16 @@ function exibirMais(offset, limite) {
       )
       .join("");
     pokemonList.innerHTML += newList;
+
+    const pokemonItems = document.querySelectorAll(".pokemon");
+
+    pokemonItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        const pokemonId = item.dataset.id;
+        window.location.href = `details.html?id=${pokemonId}`;
+   
+      });
+    });
   });
 }
 
