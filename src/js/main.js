@@ -1,8 +1,8 @@
 const pokemonList = document.getElementById("pokemonList");
 const botaoMore = document.getElementById("loadMoreBtn");
 
-const maxRecords = 11; // 151
-const limite = 20;
+const maxRecords = 151;
+const limite = 15;
 let offset = 0;
 
 function exibirMais(offset, limite) {
@@ -38,8 +38,12 @@ botaoMore.addEventListener("click", () => {
 
   const qntRecordsProximaPagina = offset + limite;
 
-  if ((qntRecordsProximaPagina) => maxRecords) {
-    const newLimite = qntRecordsProximaPagina - maxRecords;
+  if (qntRecordsProximaPagina >= maxRecords) {
+    const newLimite = maxRecords - offset;
     exibirMais(offset, newLimite);
+
+    botaoMore.parentElement.removeChild(botaoMore);
+  } else {
+    exibirMais(offset, limite);
   }
 });
