@@ -2,7 +2,7 @@ const pokemonList = document.getElementById("pokemonList");
 const botaoMore = document.getElementById("loadMoreBtn");
 
 const maxRecords = 151;
-const limite = 15;
+const limite = 26;
 let offset = 0;
 
 function exibirMais(offset, limite) {
