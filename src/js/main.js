@@ -6,11 +6,12 @@ const limite = 26;
 let offset = 0;
 
 function exibirMais(offset, limite) {
+  
   pokeapi.getPokemons(offset, limite).then((pokemons = []) => {
     const newList = pokemons
       .map(
         (pokemon) => `
-        <li class="pokemon ${pokemon.types[0]}" data-id="${pokemon.order}">
+          <li class="pokemon ${pokemon.types[0]}" data-id="${pokemon.order}">
             <span class="number">#00${pokemon.order}</span>
             <span class="name">${pokemon.name}</span>
             <div class="detail">
@@ -19,25 +20,27 @@ function exibirMais(offset, limite) {
                   .map((type) => `<li class="type ${type}">${type}</li>`)
                   .join("")}
               </ol>
-              <img
-                src="${pokemon.image}"
-                alt="${pokemon.name}"
-              />
+              <img src="${pokemon.image}" alt="${pokemon.name}" />
             </div>
           </li>`
       )
       .join("");
-    pokemonList.innerHTML += newList;
 
-    const pokemonItems = document.querySelectorAll(".pokemon");
+    if (pokemonList) {
+      pokemonList.innerHTML += newList;
 
-    pokemonItems.forEach((item) => {
-      item.addEventListener("click", () => {
-        const pokemonId = item.dataset.id;
-        window.location.href = `details.html?id=${pokemonId}`;
-   
+      const pokemonItems = document.querySelectorAll(".pokemon");
+
+      pokemonItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          const pokemonId = item.dataset.id;
+          window.location.href = `details.html?id=${pokemonId}`;
+        });
       });
-    });
+      
+    } else {
+      console.error("Elemento pokemonList não encontrado.");
+    }
   });
 }
 
