@@ -7,6 +7,9 @@
 
 body {
   background-color: #f6f8fc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 header,
@@ -22,6 +25,10 @@ footer {
   height: 100vh;
   padding: 1rem;
   background-color: #fff;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+  flex-direction: column;
 }
 
 .paragrafo__footer {
@@ -41,6 +48,6 @@ footer {
 .titulo-logo {
   max-width: 90%;
   height: auto;
-  display: block; 
+  display: block;
   margin: auto;
 }
