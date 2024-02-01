@@ -17,7 +17,6 @@ footer {
 }
 
 .content {
-  padding: 1rem;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -37,7 +36,7 @@ footer {
 }
 
 .titulo-logo {
-  max-width: 50%; 
+  max-width: 90%; 
   height: auto;
   display: block; 
   margin: auto;
