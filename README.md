@@ -2,7 +2,7 @@
 
 ## Visão Geral
 
-Bem-vindo ao projeto Pokedex, centrado na 1ª geração de Pokémon. Esta aplicação web utiliza a PokeAPI para apresentar informações sobre os 151 Pokémon originais, proporcionando aos usuários uma oportunidade de explorar e aprender mais sobre essas criaturas fascinantes.
+Bem-vindo ao projeto Pokedex, centrado na 1ª geração de Pokémon. Esta aplicação web utiliza a PokeAPI para apresentar informações sobre os 151 Pokémon originais, proporcionando aos usuários uma oportunidade de explorar e aprender mais sobre essas criaturas fascinantes. Feito em HTML, CSS e JS.
 
 ## Acesso Rápido
 
