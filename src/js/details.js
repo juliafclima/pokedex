@@ -7,8 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Fetch and display Pokemon details
   pokeapi.getPokemonsDetailByName(pokemonName).then((pokemon) => {
-    const detailHtml = `
-    <div class="pokemon ${pokemon.types[0]}" data-id="${pokemon.order}">
+    const detailHtml = `<div class="pokemon ${pokemon.types[0]}" data-id="${pokemon.order}">
     <span class="number">Número: #00${pokemon.order}</span>
     <span class="name">${pokemon.name}</span>
     <div class="detail">
@@ -19,8 +18,24 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
       <img src="${pokemon.image}" alt="${pokemon.name}" />
     </div>
+    <div class="caracteristicas">
+    <span class="name">Altura: ${pokemon.height}</span>
+    <span class="name">Peso: ${pokemon.weight}</span>
+    </div>
+    
+    <div class="abilities">
+    <span class="ability">Habilidades:</span>
+      ${pokemon.abilities
+        .map((ability) => `<span class="ability">${ability}</span>`)
+        .join("")}
+    </div>
+    <div class="stats">
+      ${pokemon.stats
+        .map((stat) => `<span class="stat">${stat.name}<br>${stat.baseStat}</span>`)
+        .join("")}
+    </div>
   </div>
-    `;
+  `
     pokemonDetailsContainer.innerHTML = detailHtml;
   });
 });

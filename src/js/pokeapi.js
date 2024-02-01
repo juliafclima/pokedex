@@ -6,10 +6,19 @@ function converterPokeApiDetailPokemon(pokeDetail) {
   pokemon.name = pokeDetail.name;
   pokemon.types = pokeDetail.types.map((typeSlot) => typeSlot.type.name);
   pokemon.image = pokeDetail.sprites.other.dream_world.front_default;
+  pokemon.height = pokeDetail.height;
+  pokemon.weight = pokeDetail.weight;
+  pokemon.abilities = pokeDetail.abilities.map(
+    (abilitySlot) => abilitySlot.ability.name
+  );
+  pokemon.baseExperience = pokeDetail.base_experience;
+  pokemon.stats = pokeDetail.stats.map((stat) => ({
+    name: stat.stat.name,
+    baseStat: stat.base_stat,
+  }));
 
   return pokemon;
 }
-
 
 pokeapi.getPokemonsDetail = (pokemon) => {
   return fetch(pokemon.url)
