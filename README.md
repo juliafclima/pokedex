@@ -34,3 +34,7 @@ O projeto utiliza as seguintes bibliotecas e recursos externos:
 ## API PokeAPI
 
 O projeto integra a [PokeAPI](https://pokeapi.co/) para fornecer informações detalhadas sobre os Pokémon.
+
+## Screenshot
+![pokedex-capa](https://github.com/juliafclima/pokedex/assets/134448650/d88bc977-1b12-44e2-aa1a-50fee4b102bc)
+
